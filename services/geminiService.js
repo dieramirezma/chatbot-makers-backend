@@ -1,5 +1,5 @@
 import dotenv from "dotenv"
-import inventory from "../models/inventory.js"
+import {inventory} from "../models/inventory.js"
 
 import { GoogleGenerativeAI } from "@google/generative-ai"
 dotenv.config();
@@ -32,7 +32,7 @@ async function callModel(message) {
     const chatbotResponse = result.response.text();
 
     chatHistory.push({ role: "chatbot", content: chatbotResponse })
-    
+
     console.log(chatbotResponse)
     return chatbotResponse
   } catch (error) {

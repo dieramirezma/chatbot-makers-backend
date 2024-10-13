@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import ChatRouter from './routes/chat.js'
+import DashboardRouter from './routes/dashboard.js'
 
 dotenv.config()
 
@@ -20,6 +21,7 @@ app.use(cors({
 }))
 
 app.use('/api/v1/chat', ChatRouter)
+app.use('/api/v1/dashboard', DashboardRouter)
 
 app.get('/api/v1', (req, res) => {
     res.send('<h1>Hi, Markers Tech🚀 ✋</h1>')
