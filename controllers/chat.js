@@ -8,7 +8,7 @@ export async function handleMessage(req, res) {
 
   try {
       const response = await callModel(message)
-      res.status(200).send(response)
+      res.status(200).json({response})
   } catch (error) {
       res.status(500).send(`An error occurred while processing the request: ${error}`)
   }
